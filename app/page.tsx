@@ -1,20 +1,17 @@
-import { createUser } from "./user/page";
-
-
+import { createUser } from "./user/actions";
 
 export default function Page() {
-
   return (
-    <>
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      
-      <form action={createUser} className="bg-white p-8 rounded-2xl shadow-lg w-[350px] flex flex-col gap-4">
-        
+      <form
+        action={createUser}
+        className="bg-white p-8 rounded-2xl shadow-lg flex flex-col gap-4"
+        style={{ width: 350 }}  
+      >
         <h1 className="text-2xl font-bold text-center text-gray-800">
           Contact Form
         </h1>
 
-        {/* Name */}
         <div className="flex flex-col gap-2">
           <label htmlFor="name" className="font-medium text-gray-700">
             Name
@@ -25,11 +22,10 @@ export default function Page() {
             id="name"
             name="name"
             placeholder="Enter your name"
-            className="border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-blue-500"
+            className="border border-gray-300 rounded-lg px-4 py-3"
           />
         </div>
 
-        {/* Email */}
         <div className="flex flex-col gap-2">
           <label htmlFor="email" className="font-medium text-gray-700">
             Email
@@ -40,20 +36,17 @@ export default function Page() {
             id="email"
             name="email"
             placeholder="Enter your email"
-            className="border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-blue-500"
+            className="border border-gray-300 rounded-lg px-4 py-3"
           />
         </div>
 
-        {/* Button */}
         <button
           type="submit"
-          className="bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition duration-300"
+          className="bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg"
         >
           Submit
         </button>
       </form>
-
     </div>
-    </>
   );
 }

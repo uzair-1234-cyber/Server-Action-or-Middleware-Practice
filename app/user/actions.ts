@@ -1,6 +1,6 @@
 'use server';
 
- export async function createUser  (formData:FormData)  {
+ export  const createUser = async (formData:FormData) => {
   const Name = formData.get('name')
   const email = formData.get('email')
 
